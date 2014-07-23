@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui axcontainer
+QT       += core gui axcontainer sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,9 +14,20 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    excel.cpp
+    excel.cpp \
+    mmm.cpp \
+    textdict.cpp \
+    manualfix.cpp \
+    mdb.cpp \
+    mdbdict.cpp
 
 HEADERS  += mainwindow.h \
-    excel.h
+    excel.h \
+    mmm.h \
+    textdict.h \
+    manualfix.h \
+    mdb.h \
+    mdbdict.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    manualfix.ui

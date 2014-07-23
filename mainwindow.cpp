@@ -23,7 +23,25 @@ MainWindow::~MainWindow()
 void MainWindow::on_fixName_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this, "保存Excel", "", "Excel Files(*.txt)");
-    dumpColumn(fileName);
+    dumpColumn(fileName + "colname");
+
+}
+
+void MainWindow::fix(QString fileName)
+{
+    int count;
+    int i;
+    mmm = new MMM();
+    mmm->initDict("dict.txt");
+    count = excel->getUsedRowCount();
+
+    int column = ui->columnName->currentIndex();
+    for (i = 0; i < count; i++) {
+        QString value = excel->getCellValue(i, column);
+        QString segment = mmm->segment(value);
+        //QDebug() << segment;
+    }
+
 }
 
 void MainWindow::dumpColumn(QString fileName)

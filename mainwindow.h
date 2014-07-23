@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "excel.h"
+#include "mmm.h"
 #include <QCloseEvent>
 
 namespace Ui {
@@ -22,6 +23,7 @@ private:
     void updateColumnName();
     void closeEvent (QCloseEvent * event);
     void dumpColumn(QString fileName);
+    void fix(QString fileName);
 
 private slots:
     void on_fixName_clicked();
@@ -35,6 +37,7 @@ private:
     
 private:
     Excel *excel;
+    MMM *mmm;
 };
 
 #endif // MAINWINDOW_H
